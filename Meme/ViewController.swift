@@ -12,11 +12,38 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var ImagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIButton!
-   
+    
+    @IBOutlet weak var topLabel: UITextField!
+    @IBOutlet weak var bottomLabel: UITextField!
+    
+    let memeTextAttributes = [
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)! ,
+       NSStrokeColorAttributeName : UIColor.yellowColor(),
+       NSForegroundColorAttributeName : UIColor.redColor(),
+       // NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
+        NSStrokeWidthAttributeName : NSNumber(float: -4.0)
+    ]
+    
+    
+
+    
+    
+    
     override func viewWillAppear(animated: Bool) {
         
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        topLabel.defaultTextAttributes = memeTextAttributes
+        bottomLabel.defaultTextAttributes = memeTextAttributes
+      subscribeToKeyboardNotifications()
+        
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+       unsubscribeFromKeyboardNotifications()
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +54,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+  func keyboardWillShow(notification: NSNotification) {
+        view.frame.origin.y -= getKeyboardHeight(notification)
+    }
+    
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name:
+            UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    
+    func subscribeToKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:))    , name: UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    
+    
+    
+    
 
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+          let userInfo = notification.userInfo
+          let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+          return keyboardSize.CGRectValue().height
+      }
+    
    
     @IBAction func pickAnImage(sender: AnyObject) {
         let pickerController = UIImagePickerController()

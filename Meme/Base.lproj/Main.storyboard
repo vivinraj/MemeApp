@@ -44,12 +44,26 @@
                                     <constraint firstAttribute="height" constant="577" id="m85-uP-WAE"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VeE-xl-cVi">
+                                <rect key="frame" x="275" y="20" width="49" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0mx-zB-TTy">
+                                <rect key="frame" x="260" y="391" width="80" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3rD-r4-CsM" secondAttribute="bottom" id="A6W-mc-lnF"/>
+                            <constraint firstItem="VeE-xl-cVi" firstAttribute="centerX" secondItem="IYf-Oq-dml" secondAttribute="centerX" id="FVc-Qt-sxy"/>
+                            <constraint firstItem="IYf-Oq-dml" firstAttribute="top" secondItem="VeE-xl-cVi" secondAttribute="bottom" constant="-182" id="STt-SI-m2f"/>
                             <constraint firstItem="3rD-r4-CsM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Sdu-SO-E3R"/>
+                            <constraint firstItem="0mx-zB-TTy" firstAttribute="top" secondItem="IYf-Oq-dml" secondAttribute="bottom" constant="-54" id="T6r-O5-1fV"/>
                             <constraint firstItem="3rD-r4-CsM" firstAttribute="top" secondItem="IYf-Oq-dml" secondAttribute="bottom" constant="111" id="W1O-vX-17g"/>
+                            <constraint firstItem="0mx-zB-TTy" firstAttribute="centerX" secondItem="IYf-Oq-dml" secondAttribute="centerX" id="b2W-Pf-fPT"/>
                             <constraint firstItem="IYf-Oq-dml" firstAttribute="centerX" secondItem="3rD-r4-CsM" secondAttribute="centerX" id="crk-ES-5ug"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3rD-r4-CsM" secondAttribute="trailing" constant="-20" id="hWN-xS-na2"/>
                             <constraint firstItem="IYf-Oq-dml" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="paR-nD-SlT"/>
@@ -57,7 +71,9 @@
                     </view>
                     <connections>
                         <outlet property="ImagePickerView" destination="IYf-Oq-dml" id="FPU-MN-eVE"/>
+                        <outlet property="bottomLabel" destination="0mx-zB-TTy" id="Sdm-5h-1fx"/>
                         <outlet property="cameraButton" destination="qMd-WS-jcJ" id="SQn-lQ-qj0"/>
+                        <outlet property="topLabel" destination="VeE-xl-cVi" id="eNB-pI-cI7"/>
                         <outlet property="view" destination="qMd-WS-jcJ" id="WXI-XZ-Ga5"/>
                     </connections>
                 </viewController>
