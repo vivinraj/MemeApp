@@ -34,8 +34,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("success")
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            //ImagePickerView = UIImageView(frame:CGRect(x: 0,y: 0,width: 100,height: 70))
+            print("success1")
             ImagePickerView.image = image
-            ImagePickerView.contentMode = UIViewContentMode.ScaleAspectFill
+            print("success2")
+            ImagePickerView.contentMode = UIViewContentMode.ScaleAspectFit
             
         }
         dismissViewControllerAnimated(true, completion: nil)
@@ -45,6 +48,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func pickAnImageFromCamera(sender: AnyObject) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
     
     
     

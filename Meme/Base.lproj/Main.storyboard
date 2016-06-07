@@ -18,18 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rD-r4-CsM">
-                                <rect key="frame" x="0.0" y="577" width="600" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rD-r4-CsM">
+                                <rect key="frame" x="20" y="556" width="560" height="44"/>
                                 <items>
                                     <barButtonItem title="Pick" id="RbE-lw-G94">
                                         <connections>
                                             <action selector="pickAnImage:" destination="BYZ-38-t0r" id="mju-zF-Jqq"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Camera" style="plain" id="odf-Gt-aWI">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qMd-WS-jcJ">
+                                            <rect key="frame" x="63" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="KSi-Lq-67g"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-Oq-dml">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="466"/>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-Oq-dml">
+                                <rect key="frame" x="0.0" y="-132" width="600" height="577"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="577" id="m85-uP-WAE"/>
                                 </constraints>
@@ -40,7 +50,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3rD-r4-CsM" secondAttribute="bottom" id="A6W-mc-lnF"/>
                             <constraint firstItem="3rD-r4-CsM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Sdu-SO-E3R"/>
                             <constraint firstItem="3rD-r4-CsM" firstAttribute="top" secondItem="IYf-Oq-dml" secondAttribute="bottom" constant="111" id="W1O-vX-17g"/>
+                            <constraint firstItem="IYf-Oq-dml" firstAttribute="centerX" secondItem="3rD-r4-CsM" secondAttribute="centerX" id="crk-ES-5ug"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3rD-r4-CsM" secondAttribute="trailing" id="hWN-xS-na2"/>
+                            <constraint firstItem="IYf-Oq-dml" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="paR-nD-SlT"/>
                         </constraints>
                     </view>
                     <connections>
