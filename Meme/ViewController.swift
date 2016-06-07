@@ -35,12 +35,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topLabel.defaultTextAttributes = memeTextAttributes
         bottomLabel.defaultTextAttributes = memeTextAttributes
       subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications1()
         
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
        unsubscribeFromKeyboardNotifications()
+        unsubscribeToKeyboardNotifications1()
     }
     
     
@@ -59,10 +61,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
+    func keyboardWillHide(notification: NSNotification) {
+        view.frame.origin.y = 0
+        
+    }
+    
+    func subscribeToKeyboardNotifications1() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func unsubscribeToKeyboardNotifications1() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
     
     func unsubscribeFromKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name:
-            UIKeyboardWillShowNotification, object: nil)
+        UIKeyboardWillShowNotification, object: nil)
     }
     
     
