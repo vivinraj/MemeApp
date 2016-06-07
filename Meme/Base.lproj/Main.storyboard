@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rD-r4-CsM">
-                                <rect key="frame" x="20" y="556" width="560" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem title="Pick" id="RbE-lw-G94">
                                         <connections>
@@ -28,9 +28,9 @@
                                     </barButtonItem>
                                     <barButtonItem title="Camera" style="plain" id="odf-Gt-aWI">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qMd-WS-jcJ">
-                                            <rect key="frame" x="63" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="63" y="7" width="54" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button"/>
+                                            <state key="normal" title="Camera"/>
                                         </button>
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="KSi-Lq-67g"/>
@@ -48,15 +48,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3rD-r4-CsM" secondAttribute="bottom" id="A6W-mc-lnF"/>
-                            <constraint firstItem="3rD-r4-CsM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Sdu-SO-E3R"/>
+                            <constraint firstItem="3rD-r4-CsM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Sdu-SO-E3R"/>
                             <constraint firstItem="3rD-r4-CsM" firstAttribute="top" secondItem="IYf-Oq-dml" secondAttribute="bottom" constant="111" id="W1O-vX-17g"/>
                             <constraint firstItem="IYf-Oq-dml" firstAttribute="centerX" secondItem="3rD-r4-CsM" secondAttribute="centerX" id="crk-ES-5ug"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3rD-r4-CsM" secondAttribute="trailing" id="hWN-xS-na2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3rD-r4-CsM" secondAttribute="trailing" constant="-20" id="hWN-xS-na2"/>
                             <constraint firstItem="IYf-Oq-dml" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="paR-nD-SlT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ImagePickerView" destination="IYf-Oq-dml" id="FPU-MN-eVE"/>
+                        <outlet property="cameraButton" destination="qMd-WS-jcJ" id="SQn-lQ-qj0"/>
+                        <outlet property="view" destination="qMd-WS-jcJ" id="WXI-XZ-Ga5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

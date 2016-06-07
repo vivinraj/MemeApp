@@ -11,7 +11,12 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var ImagePickerView: UIImageView!
-    
+    @IBOutlet weak var cameraButton: UIButton!
+   
+    override func viewWillAppear(animated: Bool) {
+        
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +56,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
