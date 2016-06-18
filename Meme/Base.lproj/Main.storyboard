@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rD-r4-CsM">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rD-r4-CsM" userLabel="toolbar">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem title="Pick" id="RbE-lw-G94">
@@ -36,10 +36,15 @@
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="KSi-Lq-67g"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Share" id="AYk-pF-14y">
+                                        <connections>
+                                            <action selector="shareButton:" destination="BYZ-38-t0r" id="o3I-du-xre"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-Oq-dml">
-                                <rect key="frame" x="0.0" y="-132" width="600" height="577"/>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-Oq-dml">
+                                <rect key="frame" x="0.0" y="-132" width="400" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="577" id="m85-uP-WAE"/>
                                 </constraints>
@@ -73,6 +78,8 @@
                         <outlet property="ImagePickerView" destination="IYf-Oq-dml" id="FPU-MN-eVE"/>
                         <outlet property="bottomLabel" destination="0mx-zB-TTy" id="Sdm-5h-1fx"/>
                         <outlet property="cameraButton" destination="qMd-WS-jcJ" id="SQn-lQ-qj0"/>
+                        <outlet property="shareButton" destination="AYk-pF-14y" id="MJa-Tk-MIR"/>
+                        <outlet property="toolbar" destination="3rD-r4-CsM" id="0yX-1x-MnA"/>
                         <outlet property="topLabel" destination="VeE-xl-cVi" id="eNB-pI-cI7"/>
                         <outlet property="view" destination="qMd-WS-jcJ" id="WXI-XZ-Ga5"/>
                     </connections>
