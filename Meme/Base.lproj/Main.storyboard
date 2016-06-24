@@ -43,8 +43,8 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-Oq-dml">
-                                <rect key="frame" x="0.0" y="-132" width="400" height="500"/>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-Oq-dml">
+                                <rect key="frame" x="0.0" y="-132" width="600" height="577"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="577" id="m85-uP-WAE"/>
                                 </constraints>
